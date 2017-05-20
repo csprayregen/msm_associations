@@ -25,6 +25,10 @@
         <a href="/directors/<%= @movie.director_id %>">
           <%= Director.find_by(:id => @movie.director_id).name %></dd>
         </a>
+
+        <dt>Number of characters</dt>
+        <dd>5</dd>
+
       </dl>
 
       <div class="btn-group btn-group-justified">
