@@ -1,5 +1,12 @@
 class Movie < ApplicationRecord
 
+belongs_to(:director, :class_name => "Director", :foreign_key => "director_id" )
+
+has_many(:characters, :class_name => "Character", :foreign_key => "movie_id")
+
+# I dont't think this is right
+# has_many(:actors, :class_name => "Character", :foreign_key => "actor_id")
+
   #  - director_id: must be present
   validates :director_id, presence: true
 

@@ -46,10 +46,16 @@
   </div>
 
   <ul>
-    <% Character.where(:movie_id => @movie.id).each do |character| %>
-    <li> <a href="/characters/<%= character.id %>"> <%= character.name %> </a> </li>
+    <% @movie.characters.each do |character| %>
+    <li>  <%=character.actor.name %>
+      (<%=character.name %>)
+    </li>
     <% end %>
   </ul>
+
+
+
+
 
   <div class="page-header">
     <h3>Add Character</h3>
@@ -65,7 +71,7 @@
         Movie
       </label>
 
-<input type = "hidden" name = "movie_id" value = "<%=@movie.id%>">
+      <input type = "hidden" name = "movie_id" value = "<%=@movie.id%>">
 
       <!-- Label and input for actor_id -->
       <div class="form-group">
